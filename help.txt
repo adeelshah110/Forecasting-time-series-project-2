@@ -1,0 +1,8 @@
+# Step1 
+ one install all packages 
+!pip install matplotlib pandas python-pptx openpyxl lxml pillow
+!pip install scikit-learn xgboost
+
+
+# step 2
+Reading datasets
