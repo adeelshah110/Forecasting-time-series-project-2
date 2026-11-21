@@ -106,7 +106,7 @@ m1.metric("MAE", f"{mae:,.1f} MW")
 m2.metric("RMSE", f"{rmse:,.1f} MW")
 m3.metric("MAPE", f"{mape:.2f}%")
 
-comparison = pd.DataFrame({"Actual": test["y"].tail(24 * 7), "Predicted": pred[-24 * 7:]})
+comparison = pd.DataFrame({"Actual": test["y"].tail(24 * 7).reset_index(drop=True), "Predicted": pred[-24 * 7:]})
 comparison.index.name = "time"
 comparison = comparison.reset_index().melt(id_vars="time", var_name="Series", value_name="Demand")
 fig_eval = px.line(comparison, x="time", y="Demand", color="Series", title="Actual vs predicted demand — final test week")
